@@ -1943,7 +1943,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ARVideoManager
   trackedImageManager: {fileID: 2004822943}
   videoManager: {fileID: 0}
-  uiManager: {fileID: 0}
+  uiManager: {fileID: 1025874817}
 --- !u!114 &2004822946
 MonoBehaviour:
   m_ObjectHideFlags: 0
