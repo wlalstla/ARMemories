@@ -7,6 +7,15 @@ public class UIManager : MonoBehaviour
     public GameObject scanGuideText;
     public GameObject resetButton;
 
+    private void Start()
+    {
+        if (resetButton != null)
+        {
+            resetButton.SetActive(true);
+        }
+
+        ResetUI();
+    }
     public void OnClickOK()
     {
         if (guidePopup != null)
@@ -15,12 +24,8 @@ public class UIManager : MonoBehaviour
         if (scanGuideText != null)
             scanGuideText.SetActive(true);
 
-        if (resetButton != null)
-            resetButton.SetActive(false);
-
     }
 
-    
     public void ForceHideScanText()
     {
         if (scanGuideText != null && scanGuideText.activeSelf)
@@ -31,8 +36,18 @@ public class UIManager : MonoBehaviour
 
     public void ResetUI()
     {
-        if (guidePopup != null) guidePopup.SetActive(true);
-        if (scanGuideText != null) scanGuideText.SetActive(false);
-        if (resetButton != null) resetButton.SetActive(true);
+        // 1. 안내 팝업을 다시 켭니다.
+        if (guidePopup != null)
+            guidePopup.SetActive(true);
+
+        // 2. 스캔 가이드 텍스트는 끕니다.
+        if (scanGuideText != null)
+            scanGuideText.SetActive(false);
+
+        // 3. [핵심] 리셋 버튼을 끄던 코드를 지우고, 무조건 'true'로 유지합니다.
+        if (resetButton != null)
+        {
+            resetButton.SetActive(true);
+        }
     }
 }
