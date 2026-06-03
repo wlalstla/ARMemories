@@ -5,6 +5,7 @@ public class UIManager : MonoBehaviour
     [Header("UI")]
     public GameObject guidePopup;
     public GameObject scanGuideText;
+    public GameObject resetButton;
 
     public void OnClickOK()
     {
@@ -13,9 +14,13 @@ public class UIManager : MonoBehaviour
 
         if (scanGuideText != null)
             scanGuideText.SetActive(true);
+
+        if (resetButton != null)
+            resetButton.SetActive(false);
+
     }
 
-    // 조건식 다 걷어내고 무조건 끄도록 단순화
+    
     public void ForceHideScanText()
     {
         if (scanGuideText != null && scanGuideText.activeSelf)
@@ -28,5 +33,6 @@ public class UIManager : MonoBehaviour
     {
         if (guidePopup != null) guidePopup.SetActive(true);
         if (scanGuideText != null) scanGuideText.SetActive(false);
+        if (resetButton != null) resetButton.SetActive(true);
     }
 }
